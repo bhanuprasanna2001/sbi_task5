@@ -3,10 +3,10 @@ Inference of protein secondary structure motifs
 
 ---
 
-| Aspect               | Target                                                                                                                                                                                                        |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Simulator**        | Exact replication of the Task 5 HMM (fixed emissions + transitions; always start in “other”).                                                                                                                 |
-| **Training data**    | 𝑁≈30 k synthetic sequences (lengths 50-300 aa, uniformly sampled). For each:  • observed amino-acid string  • ground-truth hidden state path  • exact posterior state probabilities from forward–backward.   |
-| **Inference engine** | BayesFlow (summary net + conditioner flow) that maps a *variable-length* sequence to a distribution over a matching-length vector of helix–posterior logits.                                                  |
-| **Metrics**          | • Average cross-entropy between predicted and exact posteriors on held-out synthetic set  • Calibration curve  • Helix/other classification accuracy (0.5 threshold)  • Qualitative overlay on human insulin. |
-| **Deliverables**     | • Well-documented Python package  • Jupyter notebook demo  • Slides & short report (per course rules)                                                                                                         |
+| Aspect                      | Purpose                                                                                                                                                            |            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **Goal**                    | Estimate, for every residue in an amino-acid sequence, the posterior probability of being in the **α-helix (H) state** given the observed sequence.                |            |
+| **Generative model**        | A 2-state HMM (`H` = helix, `C` = coil) with categorical emissions over the 20-letter protein alphabet.                                                            |            |
+| **Inference target**        | A length-`L` vector **θ = (p₁,…,p\_L)** where pᵢ = P(stateᵢ = H                                                                                                    | sequence). |
+| **Technique**               | Simulation-based inference (SBI) via **BayesFlow’s ContinuousApproximator** → learns a mapping *once* that amortises posterior estimation for arbitrary sequences. |            |
+| **Baseline / sanity-check** | Classic forward-backward posterior from **`hmmlearn.CategoricalHMM`**. ([hmmlearn.readthedocs.io][1], [hmmlearn.readthedocs.io][1])                                |            |
