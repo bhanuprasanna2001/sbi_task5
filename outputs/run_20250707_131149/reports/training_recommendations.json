@@ -1,0 +1,23 @@
+{
+  "priority": "CRITICAL",
+  "status": "TRAINING_FAILED",
+  "immediate_actions": [
+    "Stop current training approach",
+    "Review data preprocessing pipeline",
+    "Verify BayesFlow adapter configuration",
+    "Check for data leakage or preprocessing errors"
+  ],
+  "training_adjustments": [
+    "Use larger dataset (10k-50k samples)",
+    "Train for 50-100 epochs minimum",
+    "Implement learning rate scheduling",
+    "Use validation-based early stopping",
+    "Monitor both training and validation loss"
+  ],
+  "architecture_changes": [
+    "Increase summary network capacity",
+    "Use bidirectional LSTM with more units",
+    "Consider attention mechanisms for sequence modeling",
+    "Increase Flow Matching network depth"
+  ]
+}

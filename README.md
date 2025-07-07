@@ -1,3 +1,3 @@
-# sbi_task5
-Inference of protein secondary structure motifs
+# SBI Task 5
 
+Inference of Protein Secondary Structure Motifs using BayesFlow

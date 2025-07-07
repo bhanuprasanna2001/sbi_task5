@@ -1,0 +1,9 @@
+{
+  "n_sequences": 100,
+  "seq_length": 100,
+  "vary_length": true,
+  "min_length": 50,
+  "max_length": 200,
+  "output_dir": "data",
+  "random_seed": 42
+}
