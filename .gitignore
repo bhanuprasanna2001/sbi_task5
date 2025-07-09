@@ -3,6 +3,8 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+sbi_task5-nice.zip
+
 # C extensions
 *.so
 
